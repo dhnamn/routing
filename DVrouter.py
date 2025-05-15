@@ -1,3 +1,9 @@
+####################################################
+# DVrouter.py
+# Name: 
+# HUID: 
+#####################################################
+
 from router import Router
 from packet import Packet
 import json
@@ -6,8 +12,7 @@ import json
 class DVrouter(Router):
     def __init__(self, addr, heartbeat_time):
         # Initialize router state, routing table, neighbors, timers
-        super().__init__(addr)
-        self.addr = addr
+        Router.__init__(self, addr)  # Initialize base class
         self.heartbeat_time = heartbeat_time
         self.last_time = 0
         self.infinity = 16
@@ -130,5 +135,5 @@ class DVrouter(Router):
             self._broadcast_routing_table()
 
     def __repr__(self):
-        # String representation of the router and its routing table
+        # Representation for debugging in the network visualizer.
         return f"DVrouter(addr={self.addr}, table={self.routing_table})"
