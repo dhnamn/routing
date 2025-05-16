@@ -135,5 +135,4 @@ class DVrouter(Router):
             self._broadcast_routing_table()
 
     def __repr__(self):
-        # Representation for debugging in the network visualizer.
-        return f"DVrouter(addr={self.addr}, table={self.routing_table})"
+        pass
